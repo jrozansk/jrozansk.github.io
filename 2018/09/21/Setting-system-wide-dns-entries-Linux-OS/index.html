@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>utf8-to-clipboard | bub0r notes and reminders</title>
+  <title>Setting system-wide dns entries [Linux OS] | bub0r notes and reminders</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I found a simple way to load any unicode character into clipboard in UTF-8 encoding.UTF-8 characteristic is that is does encode characters into bytes without necessity to use \x00 byte. My method to c">
-<meta name="keywords" content="notes">
+  <meta name="description" content="After multiple attempts to do so I finally managed to setup nameservers to be used system-wide on my linux machine.Here are two main steps needed: First oneDHCP servers usually populate hosts in netwo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="utf8-to-clipboard">
-<meta property="og:url" content="https://jrozansk.github.io/2017/10/21/utf8-to-clipboard/index.html">
+<meta property="og:title" content="Setting system-wide dns entries [Linux OS]">
+<meta property="og:url" content="https://jrozansk.github.io/2018/09/21/Setting-system-wide-dns-entries-Linux-OS/index.html">
 <meta property="og:site_name" content="bub0r notes and reminders">
-<meta property="og:description" content="I found a simple way to load any unicode character into clipboard in UTF-8 encoding.UTF-8 characteristic is that is does encode characters into bytes without necessity to use \x00 byte. My method to c">
-<meta property="og:updated_time" content="2017-10-21T11:35:51.884Z">
+<meta property="og:description" content="After multiple attempts to do so I finally managed to setup nameservers to be used system-wide on my linux machine.Here are two main steps needed: First oneDHCP servers usually populate hosts in netwo">
+<meta property="og:updated_time" content="2018-09-21T19:55:42.438Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="utf8-to-clipboard">
-<meta name="twitter:description" content="I found a simple way to load any unicode character into clipboard in UTF-8 encoding.UTF-8 characteristic is that is does encode characters into bytes without necessity to use \x00 byte. My method to c">
+<meta name="twitter:title" content="Setting system-wide dns entries [Linux OS]">
+<meta name="twitter:description" content="After multiple attempts to do so I finally managed to setup nameservers to be used system-wide on my linux machine.Here are two main steps needed: First oneDHCP servers usually populate hosts in netwo">
 <meta name="twitter:creator" content="@coolwuxing">
   
     <link rel="alternative" href="/atom.xml" title="bub0r notes and reminders" type="application/atom+xml">
@@ -77,10 +76,10 @@ ga('send', 'pageview');
   </div>
 </div>
       <div id="main-wrap" class="outer">
-        <section id="main"><article id="post-utf8-to-clipboard" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Setting-system-wide-dns-entries-Linux-OS" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/21/utf8-to-clipboard/" class="article-date">
-  <time datetime="2017-10-21T11:31:43.000Z" itemprop="datePublished">2017-10-21</time>
+    <a href="/2018/09/21/Setting-system-wide-dns-entries-Linux-OS/" class="article-date">
+  <time datetime="2018-09-21T19:48:55.000Z" itemprop="datePublished">2018-09-21</time>
 </a>
     
   </div>
@@ -91,7 +90,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      utf8-to-clipboard
+      Setting system-wide dns entries [Linux OS]
     </h1>
   
 
@@ -99,32 +98,28 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>I found a simple way to load any unicode character into clipboard in UTF-8 encoding.<br>UTF-8 characteristic is that is does encode characters into bytes without necessity to use \x00 byte.</p>
-<p>My method to copy “pile of poo” character to clipboard:<br><code>python -c &quot;import pyperclip; pyperclip.copy(b&#39;\xF0\x9F\x92\xA9&#39;.decode(&#39;utf-8&#39;))&quot;</code></p>
+        <p>After multiple attempts to do so I finally managed to setup nameservers to be used system-wide on my linux machine.<br>Here are two main steps needed:</p>
+<h2 id="First-one"><a href="#First-one" class="headerlink" title="First one"></a>First one</h2><p>DHCP servers usually populate hosts in network with their nameservers, but there is a way to override those.<br>Just edit /etc/dhcp/dhclient.conf with similar entry:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">prepend domain-name-servers 8.8.8.8;</div></pre></td></tr></table></figure></p>
+<h2 id="Second-one"><a href="#Second-one" class="headerlink" title="Second one"></a>Second one</h2><p>Configure resolvconf package!<br>Edit the file: /etc/resolvconf/resolv.conf.d/head<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)</div><div class="line">#     DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN</div><div class="line"></div><div class="line">nameserver 8.8.8.8</div></pre></td></tr></table></figure></p>
+<p>Credits: <a href="https://askubuntu.com/a/974829" target="_blank" rel="external">https://askubuntu.com/a/974829</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jrozansk.github.io/2017/10/21/utf8-to-clipboard/" data-id="cjmcfe4cw00015sou131itwjz" class="article-share-link">Share</a>
+      <a data-url="https://jrozansk.github.io/2018/09/21/Setting-system-wide-dns-entries-Linux-OS/" data-id="cjmcfe4ci00005souxyyka057" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/">notes</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/09/21/Setting-system-wide-dns-entries-Linux-OS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Setting system-wide dns entries [Linux OS]
-        
-      </div>
-    </a>
   
+    <a href="/2017/10/21/utf8-to-clipboard/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">utf8-to-clipboard</div>
+    </a>
   
 </nav>
 

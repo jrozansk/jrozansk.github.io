@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2018/9 | bub0r notes and reminders</title>
+  <title>Some AES weakness | bub0r notes and reminders</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="bub0r notes and reminders">
-<meta property="og:url" content="https://jrozansk.github.io/archives/2018/09/index.html">
+  <meta name="description" content="AES is asymmetric cipher used to encrypt messages. It can be used in CBC mode and this specific mode will be considered for this post purposes.Imagine that you know structure of plaintext - which byte">
+<meta name="keywords" content="crypto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Some AES weakness">
+<meta property="og:url" content="https://jrozansk.github.io/2018/10/01/Some-AES-weakness/index.html">
 <meta property="og:site_name" content="bub0r notes and reminders">
+<meta property="og:description" content="AES is asymmetric cipher used to encrypt messages. It can be used in CBC mode and this specific mode will be considered for this post purposes.Imagine that you know structure of plaintext - which byte">
+<meta property="og:updated_time" content="2018-10-01T19:11:44.987Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bub0r notes and reminders">
+<meta name="twitter:title" content="Some AES weakness">
+<meta name="twitter:description" content="AES is asymmetric cipher used to encrypt messages. It can be used in CBC mode and this specific mode will be considered for this post purposes.Imagine that you know structure of plaintext - which byte">
 <meta name="twitter:creator" content="@coolwuxing">
   
     <link rel="alternative" href="/atom.xml" title="bub0r notes and reminders" type="application/atom+xml">
@@ -72,39 +77,54 @@ ga('send', 'pageview');
   </div>
 </div>
       <div id="main-wrap" class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/21/Setting-system-wide-dns-entries-Linux-OS/" class="archive-article-date">
-  <time datetime="2018-09-21T19:48:55.000Z" itemprop="datePublished">Sep 21</time>
+        <section id="main"><article id="post-Some-AES-weakness" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/01/Some-AES-weakness/" class="article-date">
+  <time datetime="2018-10-01T19:01:59.000Z" itemprop="datePublished">2018-10-01</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/21/Setting-system-wide-dns-entries-Linux-OS/">Setting system-wide dns entries [Linux OS]</a>
+    <h1 class="article-title" itemprop="name">
+      Some AES weakness
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>AES is asymmetric cipher used to encrypt messages. It can be used in CBC mode and this specific mode will be considered for this post purposes.<br>Imagine that you know structure of plaintext - which byte of plaintext holds what information. You can leverage this information in order to modify ciphertext (IV actually) to be decrypted to message you want. For example: you know that in plaintext 5th byte is holding boolean 0 or 1 value. To flip this value in ciphertext you intercepted you just need to flip bit in 5th byte of IV. IV is known and can be joined (usually is) together with ciphertext (in front of it).</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jrozansk.github.io/2018/10/01/Some-AES-weakness/" data-id="cjmqo4osv0000hhoucx2h6op6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/crypto/">crypto</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/21/Setting-system-wide-dns-entries-Linux-OS/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Setting system-wide dns entries [Linux OS]</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

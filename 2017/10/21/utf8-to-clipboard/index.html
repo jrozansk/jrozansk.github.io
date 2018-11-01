@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://jrozansk.github.io/2017/10/21/utf8-to-clipboard/index.html">
 <meta property="og:site_name" content="bub0r notes and reminders">
 <meta property="og:description" content="I found a simple way to load any unicode character into clipboard in UTF-8 encoding.UTF-8 characteristic is that is does encode characters into bytes without necessity to use \x00 byte. My method to c">
-<meta property="og:updated_time" content="2017-10-21T11:35:51.884Z">
+<meta property="og:updated_time" content="2018-11-01T19:44:54.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="utf8-to-clipboard">
 <meta name="twitter:description" content="I found a simple way to load any unicode character into clipboard in UTF-8 encoding.UTF-8 characteristic is that is does encode characters into bytes without necessity to use \x00 byte. My method to c">
@@ -100,12 +100,14 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p>I found a simple way to load any unicode character into clipboard in UTF-8 encoding.<br>UTF-8 characteristic is that is does encode characters into bytes without necessity to use \x00 byte.</p>
-<p>My method to copy “pile of poo” character to clipboard:<br><code>python -c &quot;import pyperclip; pyperclip.copy(b&#39;\xF0\x9F\x92\xA9&#39;.decode(&#39;utf-8&#39;))&quot;</code></p>
+<p>My method to copy “pile of poo” character to clipboard:<br><figure class="highlight python"><figcaption><span>-c "import pyperclip; pyperclip.copy(b'\xF0\x9F\x92\xA9'.decode('utf-8'))"```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">Another <span class="keyword">and</span> maybe easier method <span class="keyword">is</span> to leverage chrome console <span class="keyword">from</span> developer mode.</div></pre></td></tr></table></figure></p>
+<p>function decode_utf8(s) {<br>  return decodeURIComponent(escape(s));<br>}</p>
+<p>sign = decode_utf8(‘\xF0\x9F\x92\xA9’);<br>copy(sign);<br>```</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jrozansk.github.io/2017/10/21/utf8-to-clipboard/" data-id="cjmqo4ot70003hhou2zvh4hmc" class="article-share-link">Share</a>
+      <a data-url="https://jrozansk.github.io/2017/10/21/utf8-to-clipboard/" data-id="cjnz01pl400009souj5atvqj1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/">notes</a></li></ul>
